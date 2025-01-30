@@ -68,7 +68,7 @@ Now the recording is ready to be downloaded onto your machine. Simply run
 ```
 python .\src\download_data.py <UTC_in_milliseconds_when_the_recording_began>
 ```
-and the csv of the raw EEG will be saved to your root directory. We recommend creating a directory called `data` at root level with subdirectories called `raw_csv`, `raw_mne`, `preprocessed`, `epochs`, and `features`. The raw EEG in csv form that you just downloaded would thus belong in the `data\raw_csv` directory.
+and the csv of the raw EEG will be saved to your root directory. We recommend creating a directory called `data` at root level with subdirectories called `raw_csv`, `raw_mne`, `preprocessed`, `epochs`, and `features`. The raw EEG in csv form that you just downloaded would thus belong in the `data\raw_csv` directory. This may also be a good opportunity to label the recordings according to their experimental condition.
 
 If you want to download a recording other than the one you just made, you can find which recordings are downloadable by running
 ```
