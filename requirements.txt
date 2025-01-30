@@ -1,0 +1,11 @@
+mne
+pandas
+scipy
+numpy
+matplotlib
+jupyter
+idun-guardian-sdk
+python-dotenv
+seaborn
+PyQt6
+scikit-learn
