@@ -35,7 +35,6 @@ Assuming you have both the device address and API token, you will create a `.env
 IDUN_DEVICE_ADDRESS=<device_address>
 IDUN_API_TOKEN=<api_token>
 ```
-Please also remember to add the line `.env` to your .gitignore file, otherwise you run the risk of accidentally committing these tokens to a repo!
 
 ## Usage 
 Now for the fun part, actually recording EEG signals! First ensure your Guardian is powered on and the Bluetooth function on your laptop is activated. Then ensure both your ears and the Guardian electrodes are clean before inserting the Guardian according to the instructions.
