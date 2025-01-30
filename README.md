@@ -39,6 +39,7 @@ IDUN_API_TOKEN=<api_token>
 ## Usage 
 Now for the fun part, actually recording EEG signals! First ensure your Guardian is powered on and the Bluetooth function on your laptop is activated. Then ensure both your ears and the Guardian electrodes are clean before inserting the Guardian according to the instructions.
 
+### Preliminaries
 Before starting a recording, we should check that the device has sufficient battery power, and that the impedance is sufficiently low to allow for a good signal. Ideally, you should have impedance levels consistently below 200kOhm before beginning recording, your signal quality will thank you for taking the time for this.
 
 ```bash
@@ -48,6 +49,7 @@ python .\src\check_battery.py
 #check impedance
 python .\src\test_impedance.py
 ```
+### Recording
 Now that we have good impedance, we will actually begin recording. We need to choose the length of the recording in seconds.
 
 ```
@@ -60,6 +62,7 @@ After the recording is complete, you should see something like the following in 
 [DEBUG] YYYY-MM-DD hh:mm:ss: [BLE]: Disconnecting from the device on handler stop...
 [DEBUG] YYYY-MM-DD hh:mm:ss: [BLE]: Callback function recognised a disconnection.
 ```
+### Downloading
 Now the recording is ready to be downloaded onto your machine. Simply run
 
 ```
@@ -71,4 +74,9 @@ If you want to download a recording other than the one you just made, you can fi
 ```
 python .\src\get_recordings.py
 ```
-
+### Preprocessing
+We will use the python package MNE to handle our EEG data. Running 
+```
+python .\src\to_mne.py
+```
+will prompt the user to choose a raw EEG in CSV format from among the available choices, and give a raw MNE file in the `data/raw_mne` directory, as well as a preprocessed MNE file in the `data/preprocessed` directory. The preprocessing here involves a bandpass filter, along with a cropping of beginning and end to eliminate filter artifacts.
