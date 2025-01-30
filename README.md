@@ -60,7 +60,15 @@ After the recording is complete, you should see something like the following in 
 [DEBUG] YYYY-MM-DD hh:mm:ss: [BLE]: Disconnecting from the device on handler stop...
 [DEBUG] YYYY-MM-DD hh:mm:ss: [BLE]: Callback function recognised a disconnection.
 ```
+Now the recording is ready to be downloaded onto your machine. Simply run
 
+```
+python .\src\download_data.py <UTC_in_milliseconds_when_the_recording_began>
+```
+and the csv of the raw EEG will be saved to your root directory. We recommend creating a directory called `data` at root level with subdirectories called `raw_csv`, `raw_mne`, `preprocessed`, `epochs`, and `features`. The raw EEG in csv form that you just downloaded would thus belong in the `data\raw_csv` directory.
 
-## Contact
+If you want to download a recording other than the one you just made, you can find which recordings are downloadable by running
+```
+python .\src\get_recordings.py
+```
 
