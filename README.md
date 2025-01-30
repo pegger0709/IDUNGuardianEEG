@@ -79,4 +79,4 @@ We will use the python package MNE to handle our EEG data. Running
 ```
 python .\src\to_mne.py
 ```
-will prompt the user to choose a raw EEG in CSV format from among the available choices, and give a raw MNE file in the `data/raw_mne` directory, as well as a preprocessed MNE file in the `data/preprocessed` directory. The preprocessing here involves a bandpass filter, along with a cropping of beginning and end to eliminate filter artifacts.
+will prompt the user to choose a raw EEG in CSV format from among the available choices, and give a raw MNE file in the `data/raw_mne` directory, as well as a preprocessed MNE file in the `data/preprocessed` directory. The preprocessing here involves a bandpass filter, along with a cropping of beginning and end to eliminate filter artifacts. You can try this with the data provided, namely `data\raw_csv\eeg_1738987654321_emotion1.csv` and `data\raw_csv\eeg_1738123456789_emotion2.csv`.
