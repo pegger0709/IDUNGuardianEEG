@@ -6,6 +6,19 @@ import itertools
 from scipy import signal
 
 def extract_epochs(preprocessed):
+    """
+    Extracts epochs from a preprocessed MNE file representing an EEG recording.
+
+    This function takes a preprocessed MNE file and breaks it into epochs based on hardcoded event timestamps and categories.
+    The event timestamps are generated for 24 events, each with a duration of 20 seconds, starting every 30 seconds.
+    The event categories alternate between 1 (beginning of neutral stimulus) and 2 (beginning of emotion-evoking stimulus).
+
+    Parameters:
+    preprocessed (mne.io.Raw): The preprocessed MNE file representing the EEG recording.
+
+    Returns:
+    mne.Epochs: The epochs extracted from the preprocessed EEG recording.
+    """
     event_timestamps = list(itertools.chain(*[[30*e, 30*e+20] for e in range(24)]))
     event_categories = [1, 2]*24 #1: beginning of neutral stimulus, 2: beginning of emotion-evoking stimulus
     events = np.column_stack([
