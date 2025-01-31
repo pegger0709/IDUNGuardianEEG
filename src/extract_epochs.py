@@ -139,9 +139,9 @@ if __name__ == "__main__":
     preprocessed_filename = ""
     while preprocessed_filename not in preprocessed_filenames_list:
         preprocessed_filename = input("Please choose a preprocessed EEG file to epoch and extract features from: ")
-    preprocessed = mne.io.read_raw_fif(f"..\\..\\data\\preprocessed\\{preprocessed_filename}", preload=True)
+    preprocessed = mne.io.read_raw_fif(f"data\\preprocessed\\{preprocessed_filename}", preload=True)
     emotional_epochs, neutral_epochs = extract_epochs(preprocessed)
-    emotional_epochs.save(f"..\\..\\data\\epochs\\{preprocessed_filename[:-4]}_emotional-epo.fif")
-    neutral_epochs.save(f"..\\..\\data\\epochs\\{preprocessed_filename[:-4]}_neutral-epo.fif")
+    emotional_epochs.save(f"data\\epochs\\{preprocessed_filename[:-4]}_emotional-epo.fif")
+    neutral_epochs.save(f"data\\epochs\\{preprocessed_filename[:-4]}_neutral-epo.fif")
     emotional_features = extract_eeg_features(emotional_epochs)
-    emotional_features.to_csv(f"..\\..\\data\\features\\{preprocessed_filename[:-4]}_emotional-features.csv")
+    emotional_features.to_csv(f"data\\features\\{preprocessed_filename[:-4]}_emotional-features.csv")
