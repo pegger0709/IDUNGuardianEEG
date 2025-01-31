@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import mne
 
 def load_raw_data(raw_filename):
-    df_raw = pd.read_csv(f"data/raw/{raw_filename}")
+    df_raw = pd.read_csv(f"data/raw_csv/{raw_filename}")
     df_raw.timestamp = pd.to_datetime(df_raw.timestamp, unit='s')
     df_raw = df_raw.set_index("timestamp")
     return df_raw
